@@ -1,0 +1,67 @@
+body {
+    background-color: #000000;
+    color: #ff004f;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #videoTitle {
+    text-align: center;
+    padding: 10px;
+    font-size: 80px;
+  }
+  
+  #videoPlayer {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    margin: 20px auto;
+    display: none;
+    border: 5px solid white;
+  }
+  
+  #videoPlayerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .youtubeIframe {
+    width: 1280px; /* Update to 100% for full width */
+    height: 720px; /* Adjust the height as needed */
+    border: 1px solid #fff;
+    margin-top: 20px;
+    
+  }
+  
+  #videoDetails {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    /*border: 1px solid #ccc;*/
+  }
+  
+  #videoSummary {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Adjust the maximum width as needed */
+    margin: 20px auto;
+    color: #00ff00;
+    font-size: 18px;
+  }
+  
+  #videoKeyPoints {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Adjust the maximum width as needed */
+    margin: 20px auto;
+    list-style-type: square;
+    color: #fff;
+  }
+  
+  #videoKeyPoints li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
