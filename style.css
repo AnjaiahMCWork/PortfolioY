@@ -218,8 +218,8 @@ nav ul li a:hover:after{
 }
 .work-list{
     display: grid;
-    /*grid-template-columns: repeat(4, 1fr);*/ 
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    grid-template-columns: repeat(3, 1fr);/*here since I have less projects I used for 3 good look for portfolio icons after projects increase set the below one or use 4 instead of 3*/
+    /*grid-template-columns: repeat(auto-fit, minmax(250px,1fr));*/    /*this is used for automatic adjustment*/
     grid-gap: 40px;
     margin-top: 50px;
 }
