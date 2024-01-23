@@ -17,6 +17,7 @@
     </div>
 
     <div id="videoDetails">
+        <button id="playButton" style="display: none;">Play Game</button>
         <div id="videoSummary"></div>
         <ul id="videoKeyPoints"></ul>
     </div>
@@ -27,20 +28,24 @@
                 type: 'youtube',
                 source: 'hAa0g05_PEY',
                 summary: "This video showcases a Spaceship Adventure 3D Game where the player engages in intense battle against pattern based enemy waves in a visually immersive environment created in Unity.",
-                keyPoints: ["Implemented a user-friendly Main Menu offering start and exit options for easy navigation.", "Designed visually appealing landscapes to enhance the overall gaming experience.","Crafted dynamic, timeline-driven player movement for automatic navigation within a designated area, while still responding to player input.", "Implemented a scoring system where player score increases upon hitting enemies with  lasers and defeating them, adding depth to the gameplay.", "Developed a progressive and challenging game by incorporating multiple levels, ensuring an engaging experience for players." , "Designed Player health affected by  enemy collisions ." , "Developed a Game Over scene displaying the final score, providing players with options to either play again or return to the Main Menu for seamless experience." ,"Built the game for PC(Mac, Windows, Linux) and WebGL, ensuring accessibility across various platforms."]
+                keyPoints: ["Implemented a user-friendly Main Menu offering start and exit options for easy navigation.", "Designed visually appealing landscapes to enhance the overall gaming experience.","Crafted dynamic, timeline-driven player movement for automatic navigation within a designated area, while still responding to player input.", "Implemented a scoring system where player score increases upon hitting enemies with  lasers and defeating them, adding depth to the gameplay.", "Developed a progressive and challenging game by incorporating multiple levels, ensuring an engaging experience for players." , "Designed Player health affected by  enemy collisions ." , "Developed a Game Over scene displaying the final score, providing players with options to either play again or return to the Main Menu for seamless experience." ,"Built the game for PC(Mac, Windows, Linux) and WebGL, ensuring accessibility across various platforms."],
+                gameUrl: "https://anjaiahmc.itch.io/spaceship-adventure"
+                
             },
-            AVCMDoDornc: {
+            rc7vFfBX9f0: {
                 type: 'youtube',
-                source: 'AVCMDoDornc',
+                source: 'rc7vFfBX9f0',
                 summary: "This video showcases a Tile Vania Game which is Tile -  based platformer 2D game created in Unity.",
                 keyPoints: ["Implemented a user-friendly Main Menu scene for start and exit options for user convenience.",
-                "Created and designed multiple engaging levels with diverse challenges and objectives.", "Implemented player mechanics, allowing for running, climbing, jumping and shooting bullets.", "Engineered enemy AI with patrolling behavior, leading to player demise upon collision.","Designed and integrated interactive elements, including jump spring objects and ladders, to enhance player traversal.","Introduced hazards such as traps and water bodies, resulting in player death upon contact with them.","Implemented a health and pickup system, contributing to the overall player experience.","Utilized Unity’s tilemaps, layers and 2D physics collisions to construct levels, hazards and ladders.","Developed a Game Over scene displays the final score, providing players with options to either play again or return to the Main Menu for seamless experience.","Built the game for PC(Mac, Windows, Linux) and WebGL."]
+                "Created and designed multiple engaging levels with diverse challenges and objectives.", "Implemented player mechanics, allowing for running, climbing, jumping and shooting bullets.", "Engineered enemy AI with patrolling behavior, leading to player demise upon collision.","Designed and integrated interactive elements, including jump spring objects and ladders, to enhance player traversal.","Introduced hazards such as traps and water bodies, resulting in player death upon contact with them.","Implemented a health and pickup system, contributing to the overall player experience.","Utilized Unity’s tilemaps, layers and 2D physics collisions to construct levels, hazards and ladders.","Developed a Game Over scene displays the final score, providing players with options to either play again or return to the Main Menu for seamless experience.","Built the game for PC(Mac, Windows, Linux) and WebGL."],
+                gameUrl: "https://anjaiahmc.itch.io/tilevania"
             },
             R26aeXXpPP4: {
                 type: 'youtube',
                 source: 'R26aeXXpPP4',
                 summary: "This video showcases an Space Adventure 2D Game  which is Spaceship Shooter 2D game created in Unity.",
-                keyPoints: ["Implemented a user-friendly Main Menu scene for start and exit options for user convenience.","Formulated Player controls a spaceship, engaging intense battles against the pattern-based enemy waves.","Implemented a dynamic scoring system where player score increases upon successfully  defeating enemies, rewarding skillful gameplay.","Designed a strategic  player health system affected by both enemy collisions and enemy bullets, adding challenge and tactical depth to the gameplay.","Developed a Game Over scene displays the final score, providing players with options to either play again or return to the Main Menu for seamless experience.","Built the game for PC(Mac, Windows, Linux) and WebGL."]
+                keyPoints: ["Implemented a user-friendly Main Menu scene for start and exit options for user convenience.","Formulated Player controls a spaceship, engaging intense battles against the pattern-based enemy waves.","Implemented a dynamic scoring system where player score increases upon successfully  defeating enemies, rewarding skillful gameplay.","Designed a strategic  player health system affected by both enemy collisions and enemy bullets, adding challenge and tactical depth to the gameplay.","Developed a Game Over scene displays the final score, providing players with options to either play again or return to the Main Menu for seamless experience.","Built the game for PC(Mac, Windows, Linux) and WebGL."],
+                gameUrl: "https://anjaiahmc.itch.io/space-adventure"
             },
             bASvioBHons: {
                 type: 'youtube',
@@ -58,11 +63,13 @@
 
         const videoTitles = {
             hAa0g05_PEY: "Spaceship Adventure",
-            AVCMDoDornc: "Tile Vania",
+            rc7vFfBX9f0: "Tile Vania",
             R26aeXXpPP4:"Space Adventure",
             bASvioBHons: "Ancient Adventure",
             EB_IHFRzQsM: "Shooter"
 };
+
+const targetVideos = ['hAa0g05_PEY','rc7vFfBX9f0','R26aeXXpPP4'];
 
 function changeVideo() {
     const videoPlayer = document.getElementById('videoPlayer');
@@ -99,6 +106,17 @@ function changeVideo() {
         }
 
         appendDetails(videoDetails.summary, videoDetails.keyPoints);
+
+        // Play button logic
+        if (targetVideos.includes(videoName) && videoDetails.gameUrl) {
+            playButton.style.display = 'block';
+            playButton.addEventListener('click', () => {
+                window.location.href = videoDetails.gameUrl;
+            });
+        } else {
+            playButton.style.display = 'none';
+            playButton.removeEventListener('click'); // Remove listener if not needed
+        }
     } else {
         console.error('Video details not found for:', videoName);
     }
@@ -139,6 +157,14 @@ function changeVideo() {
             document.getElementById('videoDetails').appendChild(videoSummary);
             document.getElementById('videoDetails').appendChild(videoKeyPointsList);
         }
+
+        /* Added functionality - Play Game button */
+        const playButton = document.getElementById('playButton');
+
+        playButton.addEventListener('click', function() {
+            window.location.href = "https://your-itchio-game-url.itch.io"; // Replace with your itch.io game URL
+        });
+
 
         window.onload = changeVideo;
     </script>

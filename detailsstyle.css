@@ -41,6 +41,18 @@ body {
     padding: 20px;
     /*border: 1px solid #ccc;*/
   }
+  #playButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+  }
   
   #videoSummary {
     width: 100%;
